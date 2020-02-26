@@ -9,6 +9,7 @@ public class CustomNetworkManagerHUD : MonoBehaviour
     NetworkManager networkManager;
     TelepathyTransport telepathyTransport;
 
+    public InputField IpAddress;
     public InputField port;
 
     void Awake()
@@ -32,6 +33,8 @@ public class CustomNetworkManagerHUD : MonoBehaviour
             {
                 Debug.Log("StartHost: starting server...");
                 networkManager.StartHost();
+                Debug.Log("Transport shit -> "+Transport.activeTransport);
+                Debug.Log("Network Address shit -> " + networkManager.networkAddress);
             }
         }
     }
@@ -60,10 +63,5 @@ public class CustomNetworkManagerHUD : MonoBehaviour
         {
             networkManager.StopClient();
         }
-    }
-
-    private string getIp()
-    {
-        if(NetworkClient)
     }
 }

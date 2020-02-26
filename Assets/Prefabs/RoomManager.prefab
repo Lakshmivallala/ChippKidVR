@@ -90,8 +90,8 @@ MonoBehaviour:
   startOnHeadless: 1
   serverTickRate: 30
   showDebugMessages: 0
-  offlineScene: 
-  onlineScene: 
+  offlineScene: Offline
+  onlineScene: Lobby
   transport: {fileID: 73478171598536323}
   networkAddress: localhost
   maxConnections: 4
@@ -103,8 +103,8 @@ MonoBehaviour:
   showRoomGUI: 1
   minPlayers: 1
   roomPlayerPrefab: {fileID: 0}
-  RoomScene: 
-  GameplayScene: 
+  RoomScene: Lobby
+  GameplayScene: OnlineScene
   roomSlots: []
   allPlayersReady: 0
 --- !u!114 &3558881504329879790
