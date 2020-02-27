@@ -10,8 +10,11 @@ public class CustomNetworkManagerHUD : MonoBehaviour
     NetworkManager networkManager;
     TelepathyTransport telepathyTransport;
 
-    public InputField ipAddressInput;
-    public InputField portInput;
+    public InputField hostIPAddressInput;
+    public InputField hostPortInput;
+
+    public InputField clientIPAddressInput;
+    public InputField clientPortInput;
 
     public Text connectingToLabel;
 
@@ -28,14 +31,14 @@ public class CustomNetworkManagerHUD : MonoBehaviour
 
     public void StartHost()
     {
-        Debug.Log($"IPFuck {string.IsNullOrEmpty(ipAddressInput.text)}");
-        Debug.Log($"PortFuck {string.IsNullOrEmpty(portInput.text)}");
+        Debug.Log($"IPFuck {string.IsNullOrEmpty(hostIPAddressInput.text)}");
+        Debug.Log($"PortFuck {string.IsNullOrEmpty(hostPortInput.text)}");
         if (!NetworkClient.isConnected && !NetworkServer.active)
         {
             if (!NetworkClient.active)
             {
                 Debug.Log("StartHost: starting server...");
-                NetworkSetup(ipAddressInput.text, portInput.text);
+                NetworkSetup(hostIPAddressInput.text, hostPortInput.text);
                 networkManager.StartHost();
                 Debug.Log("Transport shit -> "+Transport.activeTransport);
                 Debug.Log("Network Address shit -> " + networkManager.networkAddress);
@@ -55,10 +58,10 @@ public class CustomNetworkManagerHUD : MonoBehaviour
     {
         if(!NetworkClient.active)
         {
-            networkManager.StartClient();
             // TODO: add ip
             try
             {
+                NetworkSetup(clientIPAddressInput.text, clientPortInput.text);
                 networkManager.StartClient();
             } catch(SocketException socketEx)
             {
@@ -82,5 +85,7 @@ public class CustomNetworkManagerHUD : MonoBehaviour
         NetworkManager.singleton.networkAddress = string.IsNullOrEmpty(ip) ? "127.0.0.1" : ip;
         ushort port = 0;
         telepathyTransport.port = ushort.TryParse(strPort, out port) ? port : (ushort)7777;
+        Debug.Log($"Hell: {ip}::{strPort}::{port}");
+        Debug.Log($"Connected on: {NetworkManager.singleton.networkAddress}::{telepathyTransport.port}");
     }
 }
