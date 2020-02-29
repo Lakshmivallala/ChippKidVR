@@ -8,14 +8,13 @@ using UnityEngine.SceneManagement;
 
 public class CustomNetworkRoomManager : NetworkRoomManager
 {
-    public ScrollView lobbyPlayers;
+    [SerializeField]
+    GameObject lobbyScrollView;
 
     public override void OnGUI()
     {
-        if (SceneManager.GetActiveScene().name == RoomScene)
-        {
-            Debug.Log("Ass");
-        }
+        lobbyScrollView = GameObject.Find("LobbyScrollView");
+        
     }
 }
 
