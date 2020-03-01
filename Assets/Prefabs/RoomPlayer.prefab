@@ -64,3 +64,5 @@ MonoBehaviour:
   showRoomGUI: 1
   readyToBegin: 0
   index: 0
+  playerLobbyUI: {fileID: 3790721742410172070, guid: 33e08d3f0d1f0004c9300e88a15b4a03,
+    type: 3}

@@ -85,7 +85,6 @@ public class CustomNetworkManagerHUD : MonoBehaviour
         NetworkManager.singleton.networkAddress = string.IsNullOrEmpty(ip) ? "127.0.0.1" : ip;
         ushort port = 0;
         telepathyTransport.port = ushort.TryParse(strPort, out port) ? port : (ushort)7777;
-        Debug.Log($"Hell: {ip}::{strPort}::{port}");
         Debug.Log($"Connected on: {NetworkManager.singleton.networkAddress}::{telepathyTransport.port}");
     }
 }
