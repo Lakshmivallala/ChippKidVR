@@ -52,6 +52,7 @@ public class CustomNetworkManagerHUD : MonoBehaviour
         {
             networkManager.StopHost();
         }
+
     }
 
     public void StartClient()
@@ -61,7 +62,9 @@ public class CustomNetworkManagerHUD : MonoBehaviour
             // TODO: add ip
             try
             {
-                NetworkSetup(clientIPAddressInput.text, clientPortInput.text);
+                //NetworkSetup(clientIPAddressInput.text, clientPortInput.text);
+                NetworkManager.singleton.networkAddress = string.IsNullOrEmpty(clientIPAddressInput.text) ? "127.0.0.1" : clientIPAddressInput.text;
+                telepathyTransport.port = (ushort)7777;
                 networkManager.StartClient();
             } catch(SocketException socketEx)
             {
