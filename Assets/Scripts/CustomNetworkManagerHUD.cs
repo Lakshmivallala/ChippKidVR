@@ -29,32 +29,6 @@ public class CustomNetworkManagerHUD : MonoBehaviour
         
     }
 
-    public void StartHost()
-    {
-        Debug.Log($"IPFuck {string.IsNullOrEmpty(hostIPAddressInput.text)}");
-        Debug.Log($"PortFuck {string.IsNullOrEmpty(hostPortInput.text)}");
-        if (!NetworkClient.isConnected && !NetworkServer.active)
-        {
-            if (!NetworkClient.active)
-            {
-                Debug.Log("StartHost: starting server...");
-                NetworkSetup(hostIPAddressInput.text, hostPortInput.text);
-                networkManager.StartHost();
-                Debug.Log("Transport shit -> "+Transport.activeTransport);
-                Debug.Log("Network Address shit -> " + networkManager.networkAddress);
-            }
-        }
-    }
-
-    public void StopHost()
-    {
-        if(NetworkServer.active && NetworkClient.isConnected)
-        {
-            networkManager.StopHost();
-        }
-
-    }
-
     public void StartClient()
     {
         if(!NetworkClient.active)
