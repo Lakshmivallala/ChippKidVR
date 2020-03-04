@@ -13,20 +13,12 @@ public class CustomNetworkManagerHUD : MonoBehaviour
     public InputField hostIPAddressInput;
     public InputField hostPortInput;
 
-    public InputField clientIPAddressInput;
-    public InputField clientPortInput;
-
     public Text connectingToLabel;
 
     void Awake()
     {
         networkManager = GetComponent<NetworkManager>();
         telepathyTransport = GetComponent<TelepathyTransport>();
-    }
-
-    void Start()
-    {
-        
     }
 
     public void StartHost()
@@ -53,24 +45,6 @@ public class CustomNetworkManagerHUD : MonoBehaviour
             networkManager.StopHost();
         }
 
-    }
-
-    public void StartClient()
-    {
-        if(!NetworkClient.active)
-        {
-            // TODO: add ip
-            try
-            {
-                //NetworkSetup(clientIPAddressInput.text, clientPortInput.text);
-                NetworkManager.singleton.networkAddress = string.IsNullOrEmpty(clientIPAddressInput.text) ? "127.0.0.1" : clientIPAddressInput.text;
-                telepathyTransport.port = (ushort)7777;
-                networkManager.StartClient();
-            } catch(SocketException socketEx)
-            {
-                Debug.Log($"Fuckin Sockets Ex: {socketEx.Message}");
-            }
-        }
     }
 
     // cancel connection attempts
