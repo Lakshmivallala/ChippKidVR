@@ -40,8 +40,6 @@ namespace Mirror
         [SerializeField]
         NetworkRoomPlayer roomPlayerPrefab;
 
-        // Fuckin' TODO: Fetch scenes from server
-
         /// <summary>
         /// The scene to use for the room. This is similar to the offlineScene of the NetworkManager.
         /// </summary>
@@ -52,15 +50,7 @@ namespace Mirror
         /// The scene to use for the playing the game from the room. This is similar to the onlineScene of the NetworkManager.
         /// </summary>
         [Scene]
-        public string AnimalScene;
-
-        /// <summary>
-        /// The scene to use for the playing the game from the room. This is similar to the onlineScene of the NetworkManager.
-        /// </summary>
-        [Scene]
-        public string LiftScene;
-
-        private bool sceneSelected;
+        public string GameplayScene;
 
         /// <summary>
         /// List of players that are in the Room
