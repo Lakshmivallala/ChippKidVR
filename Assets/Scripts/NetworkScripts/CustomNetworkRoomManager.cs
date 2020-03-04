@@ -11,8 +11,6 @@ public class CustomNetworkRoomManager : NetworkRoomManager
     [SerializeField]
     GameObject lobbyScrollView;
 
-
-
     public override void OnGUI()
     {
         lobbyScrollView = GameObject.Find("LobbyScrollView");
@@ -20,10 +18,12 @@ public class CustomNetworkRoomManager : NetworkRoomManager
 
     public void henModuleSelector()
     {
+        ServerChangeScene(GameplayScene);
         Debug.Log("hen shit");
     }
     public void eleModuleSelector()
     {
+        ServerChangeScene(GameplayScene);
         Debug.Log("elevator shit");
     }
 }
