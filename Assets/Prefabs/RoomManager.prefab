@@ -96,7 +96,7 @@ MonoBehaviour:
   networkAddress: localhost
   maxConnections: 4
   authenticator: {fileID: 0}
-  playerPrefab: {fileID: 8207263161747652524, guid: c5e2bc5d3f8c3fa4485ec739e29b1d1e,
+  playerPrefab: {fileID: 8845743372658567559, guid: 25727ea2fddf8204e9759a5431133dfd,
     type: 3}
   autoCreatePlayer: 1
   playerSpawnMethod: 0
@@ -106,7 +106,7 @@ MonoBehaviour:
   roomPlayerPrefab: {fileID: 6403763427002804563, guid: be5cd64454bbac44d9cdd5a6ecf82072,
     type: 3}
   RoomScene: Lobby
-  GameplayScene: Forest
+  GameplayScene: OnlineScene
   roomSlots: []
   allPlayersReady: 0
   lobbyScrollView: {fileID: 8362566316821453264, guid: d5ab80aa10ca2184fbcbdc8e580eedca,
@@ -125,4 +125,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hostIPAddressInput: {fileID: 0}
   hostPortInput: {fileID: 0}
+  clientIPAddressInput: {fileID: 0}
+  clientPortInput: {fileID: 0}
   connectingToLabel: {fileID: 0}
