@@ -10,9 +10,6 @@ public class CustomNetworkManagerHUD : MonoBehaviour
     NetworkManager networkManager;
     TelepathyTransport telepathyTransport;
 
-    public InputField hostIPAddressInput;
-    public InputField hostPortInput;
-
     public InputField clientIPAddressInput;
     public InputField clientPortInput;
 
@@ -24,11 +21,6 @@ public class CustomNetworkManagerHUD : MonoBehaviour
         telepathyTransport = GetComponent<TelepathyTransport>();
     }
 
-    void Start()
-    {
-        
-    }
-
     public void StartClient()
     {
         if(!NetworkClient.active)
@@ -37,7 +29,8 @@ public class CustomNetworkManagerHUD : MonoBehaviour
             try
             {
                 //NetworkSetup(clientIPAddressInput.text, clientPortInput.text);
-                NetworkManager.singleton.networkAddress = string.IsNullOrEmpty(clientIPAddressInput.text) ? "127.0.0.1" : clientIPAddressInput.text;
+                //NetworkManager.singleton.networkAddress = string.IsNullOrEmpty(clientIPAddressInput.text) ? "127.0.0.1" : clientIPAddressInput.text;
+                NetworkManager.singleton.networkAddress = "127.0.0.1";
                 telepathyTransport.port = (ushort)7777;
                 networkManager.StartClient();
             } catch(SocketException socketEx)
