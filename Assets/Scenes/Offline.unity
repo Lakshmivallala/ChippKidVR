@@ -2054,6 +2054,21 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 8845743372658567559, guid: 25727ea2fddf8204e9759a5431133dfd,
         type: 3}
+    - target: {fileID: 1587068813599758652, guid: ced93048bcca7d64bb8ca221433887ff,
+        type: 3}
+      propertyPath: GameplayScene
+      value: Forest
+      objectReference: {fileID: 0}
+    - target: {fileID: 1587068813599758652, guid: ced93048bcca7d64bb8ca221433887ff,
+        type: 3}
+      propertyPath: networkAddress
+      value: 127.0.0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1587068813599758652, guid: ced93048bcca7d64bb8ca221433887ff,
+        type: 3}
+      propertyPath: showDebugMessages
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3089030614167176295, guid: ced93048bcca7d64bb8ca221433887ff,
         type: 3}
       propertyPath: m_LocalPosition.x
