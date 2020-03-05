@@ -14,7 +14,11 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/OnlineScene.unity
     guid: db40669e747ee0546853cb9689d51f4b
+<<<<<<< HEAD
   - enabled: 0
+=======
+  - enabled: 1
+>>>>>>> 7924e2ae92b686fc7ecfd533bda68292962aff02
     path: Assets/Scenes/Forest.unity
     guid: 57ef29b4e69002847a6bf0aeb35a1deb
   m_configObjects: {}
