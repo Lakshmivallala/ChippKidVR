@@ -26,11 +26,7 @@ public class CustomNetworkRoomPlayer : NetworkRoomPlayer
 
                 if (lobbyScrollViewContent != null)
                 {
-                    playerCard.transform.SetParent(lobbyScrollViewContent.transform, false);
-                    playerCard.transform.localPosition = new Vector3(
-                        playerCard.transform.localRotation.x,
-                        260 - index * 100,
-                        playerCard.transform.localPosition.z);
+                    //player joined the lobby
                     isUIInstantiated = true;
                 }
             } else
